@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="img/logo/logo.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Smile Eye Charity</title>
+
+    <script defer src="script.js"></script>
+    <script defer src="https://smtpjs.com/v3/smtp.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav__top">
+        <button class="questionbtn">Q&A</button>
+
+        <div class="dropdown">
+          <button class="dropbtn" id="dropdownMenu">English</button>
+          <img src="./img/language/angle-down-solid.svg" width="8" />
+          <div class="dropdown-content">
+            <div
+              class="dropdown-item"
+              onclick="switchLanguageForPage('l-vietnamese')"
+            >
+              <img src="./img/language/viet-nam-logo.png" alt="" />
+              <a href="#">Vietnamese</a>
+            </div>
+            <div
+              onclick="switchLanguageForPage('l-english')"
+              class="dropdown-item"
+            >
+              <img src="./img/language/american-logo.jpg" alt="" /><a href="#"
+                >English</a
+              >
+            </div>
+            <div
+              onclick="switchLanguageForPage('l-japanese')"
+              class="dropdown-item"
+            >
+              <img src="./img/language/japan-logo.jpg" alt="" /><a href="#"
+                >Japanese</a
+              >
+            </div>
+            <div
+              onclick="switchLanguageForPage('l-french')"
+              class="dropdown-item"
+            >
+              <img src="./img/language/france-logo.jpg" alt="" /><a href="#"
+                >French</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <img
+          src="img/logo/logo-company.png"
+          alt="Smile eye logo"
+          class="nav__logo"
+          id="logo"
+        />
+
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a
+              class="nav__link header-active-language l-english"
+              href="#section--1"
+              >Projects</a
+            >
+            <a
+              class="nav__link header-disable-language l-vietnamese"
+              href="#section--1"
+              >Dự án</a
+            >
+            <a
+              class="nav__link header-disable-language l-french"
+              href="#section--1"
+              >Projets</a
+            >
+            <a
+              class="nav__link header-disable-language l-japanese"
+              href="#section--1"
+              >プロジェクト</a
+            >
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link header-active-language l-english"
+              href="#section--2"
+              >Upcomings</a
+            >
+            <a
+              class="nav__link header-disable-language l-japanese"
+              href="#section--2"
+              >今後の予定</a
+            >
+            <a
+              class="nav__link header-disable-language l-french"
+              href="#section--2"
+              >À venir</a
+            >
+            <a
+              class="nav__link header-disable-language l-vietnamese"
+              href="#section--2"
+              >Sắp diễn ra</a
+            >
+          </li>
+
+          <li class="nav__item">
+            <a
+              class="nav__link header-active-language l-english"
+              href="#section--3"
+              >Achievements</a
+            >
+            <a
+              class="nav__link header-disable-language l-vietnamese"
+              href="#section--3"
+              >Thành Tựu</a
+            >
+            <a
+              class="nav__link header-disable-language l-french"
+              href="#section--3"
+              >Réalisations</a
+            >
+            <a
+              class="nav__link header-disable-language l-japanese"
+              href="#section--3"
+              >業績</a
+            >
+          </li>
+
+          <li class="nav__item">
+            <a
+              class="nav__link header-active-language l-english"
+              href="#section--4"
+              >Attributors</a
+            >
+            <a
+              class="nav__link header-disable-language l-vietnamese"
+              href="#section--4"
+              >Đóng góp</a
+            >
+            <a
+              class="nav__link header-disable-language l-french"
+              href="#section--4"
+              >Attributeurs</a
+            >
+            <a
+              class="nav__link header-disable-language l-japanese"
+              href="#section--4"
+              >属性</a
+            >
+          </li>
+
+          <li class="nav__item">
+            <a
+              onclick="RedirectSponsors()"
+              class="nav__link header-active-language l-english"
+              href="#section--5"
+              >Sponsors</a
+            >
+            <a
+              onclick="RedirectSponsors()"
+              class="nav__link header-disable-language l-vietnamese"
+              href="#section--5"
+              >Nhà tài trợ</a
+            >
+            <a
+              onclick="RedirectSponsors()"
+              class="nav__link header-disable-language l-french"
+              href="#section--5"
+              >Commanditaires</a
+            >
+            <a
+              onclick="RedirectSponsors()"
+              class="nav__link header-disable-language l-japanese"
+              href="#section--5"
+              >スポンサー</a
+            >
+          </li>
+
+          <li class="nav__item">
+            <a
+              class="nav__link header-active-language l-english"
+              href="#section--6"
+              >Contact</a
+            >
+            <a
+              class="nav__link header-disable-language l-vietnamese"
+              href="#section--6"
+              >Liên hệ</a
+            >
+            <a
+              class="nav__link header-disable-language l-french"
+              href="#section--6"
+              >Contact</a
+            >
+            <a
+              class="nav__link header-disable-language l-japanese"
+              href="#section--6"
+              >接触</a
+            >
+          </li>
+
+          <!-- <li class="nav__item">
+            <a
+              class="nav__link nav__link--btn btn--show-modal header-active-language l-english"
+              href="#"
+              >Open account</a
+            >
+            <a
+              class="nav__link nav__link--btn btn--show-modal header-disable-language l-vietnamese"
+              href="#"
+              >Tham gia</a
+            >
+            <a
+              class="nav__link nav__link--btn btn--show-modal header-disable-language l-french"
+              href="#"
+              >Rejoindre</a
+            >
+            <a
+              class="nav__link nav__link--btn btn--show-modal header-disable-language l-japanese"
+              href="#"
+              >参加する</a
+            >
+          </li> -->
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <h1 style="color: #59d9cc">SMILE EYE CHARITY</h1>
+
+        <!--  -->
+        <h4 class="header-active-language l-english">
+          Find out about how we are doing more than ever to help more people
+        </h4>
+        <h4 class="header-disable-language l-french">
+          Découvrez comment nous faisons plus que jamais pour aider plus de
+          personnes
+        </h4>
+        <h4 class="header-disable-language l-japanese">
+          より多くの人々を助けるために私たちがこれまで以上にどのように取り組んでいるかをご覧ください
+        </h4>
+        <h4 class="header-disable-language l-vietnamese">
+          Tìm hiểu hơn về cách chúng tôi đang làm để giúp đỡ nhiều người hơn
+        </h4>
+        <!--  -->
+        <button
+          class="btn--text btn--scroll-to header-active-language l-english"
+        >
+          Learn more &DownArrow;
+        </button>
+        <button
+          class="btn--text btn--scroll-to header-disable-language l-french"
+        >
+          Apprendre encore plus &DownArrow;
+        </button>
+        <button
+          class="btn--text btn--scroll-to header-disable-language l-japanese"
+        >
+          もっと詳しく知る &DownArrow;
+        </button>
+        <button
+          class="btn--text btn--scroll-to header-disable-language l-vietnamese"
+        >
+          Tìm hiểu thêm &DownArrow;
+        </button>
+        <!--  -->
+        <iframe
+          class="header__img"
+          src="https://www.youtube.com/embed/WCWsPNTF27I"
+          title="TRỞ LẠI NHÀ BÀ CỤ NGHÈO NHẤT VIỆT NAM  TRAO QUÀ TỪ THIỆN - ĐÔNG BẮC QUÊ TÔI"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+        <!-- <img
+          class="header__img"
+          src="img/hero.png"
+          alt="Minimalist bank items"
+        /> -->
+      </div>
+    </header>
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <!--  -->
+        <h2 class="section__description header-active-language l-english">
+          Projects
+        </h2>
+        <h2 class="section__description header-disable-language l-vietnamese">
+          Dự án
+        </h2>
+        <h2 class="section__description header-disable-language l-french">
+          Projets
+        </h2>
+        <h2 class="section__description header-disable-language l-japanese">
+          プロジェクト
+        </h2>
+        <!--  -->
+        <h3 class="section__header">
+          All the information you need about ongoing projects
+        </h3>
+      </div>
+
+      <div class="projects">
+        <iframe
+          class="projects__img"
+          src="https://www.youtube.com/embed/96LUDfTQU0o"
+          title="Project to share farming techniques"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+        <div class="projects__feature">
+          <div class="projects__title">
+            <div class="projects__icon"><span>1</span></div>
+            <h5 class="projects__header">
+              Building a garden economic model
+              <button id="getLink" title="Share now">
+                <input
+                  style="display: none"
+                  type="text"
+                  id="project__link--1"
+                  value="http://127.0.0.1:5500/index.html"
+                />
+                <img src="img/plan/share.png" alt="" />
+              </button>
+            </h5>
+          </div>
+          <div class="project__times">
+            <h5 class="project__time">Time: 01/11/2023 ~ 01/11/2025</h5>
+            <h5 class="project__address">
+              Address : New Pa-Cang residential cluster
+            </h5>
+          </div>
+          <p class="limited-text">
+            Each household has a garden area of over 500m2. Full electricity and
+            water available. Furthermore, people have the habit of growing crops
+            and raising livestock. The project aims to build small-scale crop
+            and livestock farming models in residential clusters. The project
+            will accompany people in the process of building and developing the
+            model. Thereby, sharing scientific knowledge and gardening skills
+            helps people deeply understand garden economics and build their own
+            garden economic model for their families. As a result, home gardens
+            are used effectively and living standards are improved. Furthermore,
+            it contributes to a clean and beautiful green environment.
+          </p>
+
+          <div class="project__details">
+            <h5 class="project__detail">
+              <a
+                target="_blank"
+                href="https://drive.google.com/drive/folders/1LjAQWPc2vkj9a4qdBJ7ngHfznyCdaOuF"
+                >Plan file</a
+              >
+            </h5>
+            <div class="project__progress">
+              <div class="progress-text">Funding</div>
+              <div class="progress">
+                <div
+                  style="
+                    width: 60%;
+                    background-color: #59d9cc;
+                    border-radius: 8px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__interacts">
+            <div class="likes">
+              <button title="27 likes">
+                <img src="img/plan/icon-love.gif" alt="" />
+              </button>
+
+              <h5>27 likes</h5>
+            </div>
+            <div class="project__donate">
+              <button class="donate">Donate</button>
+            </div>
+          </div>
+        </div>
+
+        <iframe
+          class="projects__img"
+          src="https://www.youtube.com/embed/96LUDfTQU0o"
+          title="Project to share farming techniques"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+        <div class="projects__feature">
+          <div class="projects__title">
+            <div class="projects__icon"><span>2</span></div>
+            <h5 class="projects__header">
+              Building a garden economic model
+              <button title="Share now">
+                <img src="img/plan/share.png" alt="" />
+              </button>
+            </h5>
+          </div>
+          <div class="project__times">
+            <h5 class="project__time">Time: 01/11/2023 ~ 01/11/2025</h5>
+            <h5 class="project__address">
+              Address : New Pa-Cang residential cluster
+            </h5>
+          </div>
+          <p class="limited-text">
+            Each household has a garden area of over 500m2. Full electricity and
+            water available. Furthermore, people have the habit of growing crops
+            and raising livestock. The project aims to build small-scale crop
+            and livestock farming models in residential clusters. The project
+            will accompany people in the process of building and developing the
+            model. Thereby, sharing scientific knowledge and gardening skills
+            helps people deeply understand garden economics and build their own
+            garden economic model for their families. As a result, home gardens
+            are used effectively and living standards are improved. Furthermore,
+            it contributes to a clean and beautiful green environment.
+          </p>
+
+          <div class="project__details">
+            <h5 class="project__detail">
+              <a
+                target="_blank"
+                href="https://drive.google.com/drive/folders/1LjAQWPc2vkj9a4qdBJ7ngHfznyCdaOuF"
+                >Plan file</a
+              >
+            </h5>
+            <div class="project__progress">
+              <div class="progress-text">Funding</div>
+              <div class="progress">
+                <div
+                  style="
+                    width: 60%;
+                    background-color: #59d9cc;
+                    border-radius: 8px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__interacts">
+            <div class="likes">
+              <button title="27 likes">
+                <img src="img/plan/icon-love.gif" alt="" />
+              </button>
+
+              <h5>27 likes</h5>
+            </div>
+            <div class="project__donate">
+              <button class="donate">Donate</button>
+            </div>
+          </div>
+        </div>
+
+        <iframe
+          class="projects__img"
+          src="https://www.youtube.com/embed/96LUDfTQU0o"
+          title="Project to share farming techniques"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <div class="projects__feature">
+          <div class="projects__title">
+            <div class="projects__icon"><span>3</span></div>
+            <h5 class="projects__header">
+              Building a garden economic model
+              <button title="Share now">
+                <img src="img/plan/share.png" alt="" />
+              </button>
+            </h5>
+          </div>
+          <div class="project__times">
+            <h5 class="project__time">Time: 01/11/2023 ~ 01/11/2025</h5>
+            <h5 class="project__address">
+              Address : New Pa-Cang residential cluster
+            </h5>
+          </div>
+          <p class="limited-text">
+            Each household has a garden area of over 500m2. Full electricity and
+            water available. Furthermore, people have the habit of growing crops
+            and raising livestock. The project aims to build small-scale crop
+            and livestock farming models in residential clusters. The project
+            will accompany people in the process of building and developing the
+            model. Thereby, sharing scientific knowledge and gardening skills
+            helps people deeply understand garden economics and build their own
+            garden economic model for their families. As a result, home gardens
+            are used effectively and living standards are improved. Furthermore,
+            it contributes to a clean and beautiful green environment.
+          </p>
+
+          <div class="project__details">
+            <h5 class="project__detail">
+              <a
+                target="_blank"
+                href="https://drive.google.com/drive/folders/1LjAQWPc2vkj9a4qdBJ7ngHfznyCdaOuF"
+                >Plan file</a
+              >
+            </h5>
+            <div class="project__progress">
+              <div class="progress-text">Funding</div>
+              <div class="progress">
+                <div
+                  style="
+                    width: 60%;
+                    background-color: #59d9cc;
+                    border-radius: 8px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="project__interacts">
+            <div class="likes">
+              <button title="27 likes">
+                <img src="img/plan/icon-love.gif" alt="" />
+              </button>
+
+              <h5>27 likes</h5>
+            </div>
+            <div class="project__donate">
+              <button class="donate">Donate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Upcoming</h2>
+        <h3 class="section__header">Information on expected future projects</h3>
+      </div>
+
+      <div class="upcomings">
+        <div class="upcomings__tab-container">
+          <button
+            class="btn upcomings__tab upcomings__tab--1 upcomings__tab--active"
+            data-tab="1"
+          >
+            <span>01</span>Building a garden economic model
+          </button>
+          <button class="btn upcomings__tab upcomings__tab--2" data-tab="2">
+            <span>02</span>Building a garden economic model
+          </button>
+          <button class="btn upcomings__tab upcomings__tab--3" data-tab="3">
+            <span>03</span>Building a garden economic model
+          </button>
+        </div>
+        <div
+          class="upcomings__content upcomings__content--1 upcomings__content--active"
+        >
+          <div class="upcomings__icon upcomings__icon--1">
+            <iframe
+              class="projects__img"
+              src="https://www.youtube.com/embed/96LUDfTQU0o"
+              title="Project to share farming techniques"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <h5 class="upcomings__header">Building a garden economic model</h5>
+
+          <div class="upcomings__times">
+            <h5 class="upcomings__time">Time: 01/11/2023 ~ 01/11/2025</h5>
+            <h5 class="upcomings_address">
+              Address : New Pa-Cang residential cluster
+            </h5>
+          </div>
+
+          <p>
+            Each household has a garden area of over 500m2. Full electricity and
+            water available. Furthermore, people have the habit of growing crops
+            and raising livestock. The project aims to build small-scale crop
+            and livestock farming models in residential clusters. The project
+            will accompany people in the process of building and developing the
+            model. Thereby, sharing scientific knowledge and gardening skills
+            helps people deeply understand garden economics and build their own
+            garden economic model for their families. As a result, home gardens
+            are used effectively and living standards are improved. Furthermore,
+            it contributes to a clean and beautiful green environment.
+          </p>
+
+          <div class="upcomings__interacts">
+            <h5 class="upcomings__detail">
+              <a
+                target="_blank"
+                href="https://drive.google.com/drive/folders/1LjAQWPc2vkj9a4qdBJ7ngHfznyCdaOuF"
+                >Plan file</a
+              >
+            </h5>
+            <div class="upcomings__progress">
+              <div class="progress-text">Funding <span>60%</span></div>
+              <div class="progress">
+                <div
+                  style="
+                    width: 60%;
+                    background-color: #59d9cc;
+                    border-radius: 8px;
+                  "
+                ></div>
+              </div>
+            </div>
+
+            <div class="likes">
+              <button title="27 likes">
+                <img src="img/plan/icon-love.gif" alt="" />
+              </button>
+
+              <h5>27 likes</h5>
+            </div>
+            <div class="upcomings__donate">
+              <button class="donate">Donate</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="upcomings__content upcomings__content--2">
+          <div class="upcomings__icon upcomings__icon--2">
+            <iframe
+              class="projects__img"
+              src="https://www.youtube.com/embed/WCWsPNTF27I"
+              title="TRỞ LẠI NHÀ BÀ CỤ NGHÈO NHẤT VIỆT NAM  TRAO QUÀ TỪ THIỆN - ĐÔNG BẮC QUÊ TÔI"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <h5 class="upcomings__header">Building a garden economic model</h5>
+          <p>
+            Each household has a garden area of over 500m2. Full electricity and
+            water available. Furthermore, people have the habit of growing crops
+            and raising livestock. The project aims to build small-scale crop
+            and livestock farming models in residential clusters. The project
+            will accompany people in the process of building and developing the
+            model. Thereby, sharing scientific knowledge and gardening skills
+            helps people deeply understand garden economics and build their own
+            garden economic model for their families. As a result, home gardens
+            are used effectively and living standards are improved. Furthermore,
+            it contributes to a clean and beautiful green environment.
+          </p>
+
+          <div class="upcomings__interacts">
+            <h5 class="upcomings__detail">
+              <a
+                target="_blank"
+                href="https://drive.google.com/drive/folders/1LjAQWPc2vkj9a4qdBJ7ngHfznyCdaOuF"
+                >Plan file</a
+              >
+            </h5>
+            <div class="upcomings__progress">
+              <div class="progress-text">Funding <span>60%</span></div>
+              <div class="progress">
+                <div
+                  style="
+                    width: 60%;
+                    background-color: #59d9cc;
+                    border-radius: 8px;
+                  "
+                ></div>
+              </div>
+            </div>
+
+            <div class="likes">
+              <button title="27 likes">
+                <img src="img/plan/icon-love.gif" alt="" />
+              </button>
+
+              <h5>27 likes</h5>
+            </div>
+            <div class="upcomings__donate">
+              <button class="donate">Donate</button>
+            </div>
+          </div>
+        </div>
+        <div class="upcomings__content upcomings__content--3">
+          <div class="upcomings__icon upcomings__icon--3">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="upcomings__header">Update soon</h5>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--3">
+      <div class="section__title">
+        <h2 class="section__description">Achievements</h2>
+        <h3 class="section__header">
+          The achievements we have achieved in recent times
+        </h3>
+      </div>
+
+      <div class="achivement">
+        <div class="achivement__left__section">
+          <p class="achivement__title">Update coming soon</p>
+
+          <div class="achievement__attend">
+            <img src="img/check.png" width="24" alt="" />
+            <h5>Achievements 1</h5>
+          </div>
+          <div class="achievement__attend">
+            <img src="img/check.png" width="24" alt="" />
+            <h5>Achievements 2</h5>
+          </div>
+          <div class="achievement__attend">
+            <img src="img/check.png" width="24" alt="" />
+            <h5>Achievements 3</h5>
+          </div>
+          <div class="achievement__attend">
+            <img src="img/check.png" width="24" alt="" />
+            <h5>Achievements 4</h5>
+          </div>
+          <div class="achievement__attend">
+            <img src="img/check.png" width="24" alt="" />
+            <h5>Achievements 5</h5>
+          </div>
+
+          <div>
+            <img
+              style="margin-top: 20px"
+              width="100%"
+              src="img/achievement.PNG"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="achivement__right__section">
+          <img
+            src="https://images.unsplash.com/photo-1605032659978-a5bd04094a16?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZWxlc3N8ZW58MHx8MHx8fDA%3D"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--4">
+      <div class="section__title section__title--attributors">
+        <h2 class="section__description">Attributors</h2>
+        <h3 class="section__header">
+          Let's take a look and celebrate the attributors
+        </h3>
+      </div>
+
+      <div class="slider">
+        <div class="slide">
+          <div class="attributor">
+            <h5 class="attributor__header">Founder</h5>
+            <blockquote class="attributor__text">
+              I realized that every time I participate in something to help
+              others, I not only grow intellectually but am also healed. The
+              love within me grows stronger. I love people more and love this
+              life. This is truly a miracle. The more we help others, the more
+              wisdom we develop and the happier we are. Join the project to
+              experience these wonders with us.
+            </blockquote>
+            <address class="attributor__author">
+              <img src="img/user-1.jpg" alt="" class="attributor__photo" />
+              <h6 class="attributor__name">Dinh Thi Dong Phuong</h6>
+              <p class="attributor__location">Quang Nam, Viet Nam</p>
+              <p class="attributor__career">
+                PHD. majoring in information technology, Japan
+                <br />
+                BA majoring in mathematics and information pedagogy, psychology,
+                and education
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="attributor">
+            <h5 class="attributor__header">Sponsor</h5>
+            <blockquote class="attributor__text">
+              Quisquam itaque deserunt ullam, quia ea repellendus provident,
+              ducimus neque ipsam modi voluptatibus doloremque, corrupti
+              laborum. Incidunt numquam perferendis veritatis neque repellendus.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+              deserunt exercitationem deleniti.
+            </blockquote>
+            <address class="attributor__author">
+              <img src="img/user-2.jpg" alt="" class="attributor__photo" />
+              <h6 class="attributor__name">Nguyen Van A</h6>
+              <p class="attributor__location">Viet Nam</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="attributor">
+            <h5 class="attributor__header">Sponsor</h5>
+            <blockquote class="attributor__text">
+              Debitis, nihil sit minus suscipit magni aperiam vel tenetur
+              incidunt commodi architecto numquam omnis nulla autem,
+              necessitatibus blanditiis modi similique quidem. Odio aliquam
+              culpa dicta beatae quod maiores ipsa minus consequatur error sunt,
+              deleniti saepe aliquid quos inventore sequi. Necessitatibus id
+              alias reiciendis, perferendis facere.
+            </blockquote>
+            <address class="attributor__author">
+              <img src="img/user-3.jpg" alt="" class="attributor__photo" />
+              <h6 class="attributor__name">Francisco Gomes</h6>
+              <p class="attributor__location">Lisbon, Portugal</p>
+            </address>
+          </div>
+        </div>
+
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+
+      <div class="more-section_aatributor">
+        <div class="attributor__more">
+          <div class="attributor--more__item">
+            <img class="attributor--more--item__avatar" src="img/user-1.jpg" />
+
+            <div class="attributor--more--item__info">
+              <p class="name">Dinh Thi Dong Phuong</p>
+              <p class="job">Global HR Manager</p>
+              <p class="address">Cortex Textile Ltd. China, Vietnam, US.</p>
+            </div>
+          </div>
+
+          <div class="attributor--more__item">
+            <img class="attributor--more--item__avatar" src="img/user-1.jpg" />
+
+            <div class="attributor--more--item__info">
+              <p class="name">Dinh Thi Dong Phuong</p>
+              <p class="job">Global HR Manager</p>
+              <p class="address">Cortex Textile Ltd. China, Vietnam, US.</p>
+            </div>
+          </div>
+
+          <div class="attributor--more__item">
+            <img class="attributor--more--item__avatar" src="img/user-1.jpg" />
+
+            <div class="attributor--more--item__info">
+              <p class="name">Dinh Thi Dong Phuong</p>
+              <p class="job">Global HR Manager</p>
+              <p class="address">Cortex Textile Ltd. China, Vietnam, US.</p>
+            </div>
+          </div>
+
+          <div class="attributor--more__item">
+            <img class="attributor--more--item__avatar" src="img/user-1.jpg" />
+
+            <div class="attributor--more--item__info">
+              <p class="name">Dinh Thi Dong Phuong</p>
+              <p class="job">Global HR Manager</p>
+              <p class="address">Cortex Textile Ltd. China, Vietnam, US.</p>
+            </div>
+          </div>
+
+          <div class="attributor--more__item">
+            <img class="attributor--more--item__avatar" src="img/user-1.jpg" />
+
+            <div class="attributor--more--item__info">
+              <p class="name">Dinh Thi Dong Phuong</p>
+              <p class="job">Global HR Manager</p>
+              <p class="address">Cortex Textile Ltd. China, Vietnam, US.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--5">
+      <div class="section__title section__title--attributors">
+        <h2 class="section__description">Sponsors</h2>
+        <h3 class="section__header">Our major sponsors</h3>
+      </div>
+
+      <div class="sponsor">
+        <img
+          width="192px"
+          src="//images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/1ebd81f1d4a6569dbc707c1f/1052932_small500.png"
+          alt=""
+        />
+        <div class="sponsor__title">
+          <p>Business Com​pany</p>
+
+          <h5>
+            Sample text. Click to select the text box. Click again or double
+            click to start editing the text.
+          </h5>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sign-up" id="section--6">
+      <div class="section__title">
+        <h3 class="section__header">
+          The best day to join <span style="color: #59d9cc">Smile Eye</span> was
+          one year ago. The second best is today!
+        </h3>
+      </div>
+      <button class="btn btn--show-modal--contact">Contact us here!</button>
+
+      <div
+        style="color: white; font-weight: bold; font-size: 4rem; margin: 2rem 0"
+      >
+        Or
+      </div>
+
+      <div class="contact">
+        <a href="tel:+84962414125">
+          <div></div>
+          Hotline: 0962 414 125
+        </a>
+        <a href="mailto:dinhdongphuong@gmail.com"> dinhdongphuong@gmail.com</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <section class="footer__information">
+        <div class="footer__column">
+          <span>CONTACT INFORMATION</span>
+
+          <p>Hotline: 0962 414 125</p>
+          <p>Email: dinhdongphuong@gmail.com</p>
+          <p>Address: Thôn Pà-Ong, Xã Cà Dy, Huyện Nam Giang, Quảng Nam</p>
+        </div>
+        <div class="footer__column">
+          <span>COMPANY INFORMATION</span>
+          <p>
+            Company name: CTY phi lợi nhuận hoạt động từ thiện Smile Eye Charity
+            (viết tắt là Smile Eye Charity)
+          </p>
+          <p>Tax code: 4001273487</p>
+          <p>Bank number: MB bank, 020166669999, Smile Eye Charity</p>
+          <p>Techcombank, 22296699, Smile Eye Charity</p>
+        </div>
+        <div class="footer__column">
+          <span>WORK TIME</span>
+          <p>From Monday to Saturday: 8:30 a.m - 5:30 p.m</p>
+          <p>Support: 24/7</p>
+        </div>
+      </section>
+
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Pricing</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Careers</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <img src="img/logo/logo-company.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright 2023
+        <a class="footer__link twitter-link" target="_blank" href="#"
+          >SMILE EYE CHARITY</a
+        >
+      </p>
+    </footer>
+
+    <div class="modal__qa hidden">
+      <button class="btn--close-modal__qa">&times;</button>
+      <h2 class="modal__header">Q&A</h2>
+
+      <div class="questions">
+        <div class="questions__item">
+          <img
+            class="question__arrow_down"
+            src="img/language/angle-down-solid.svg"
+            width="12"
+          />
+          <p>Question 1</p>
+        </div>
+
+        <p class="questions__answer hidden">Answer hahahahahahahahaha</p>
+        <div class="questions__item">
+          <img
+            class="question__arrow_down"
+            src="img/language/angle-down-solid.svg"
+            width="12"
+          />
+          <p>Question 1</p>
+        </div>
+
+        <p class="questions__answer hidden">Answer hahahahahahahahaha</p>
+        <div class="questions__item">
+          <img
+            class="question__arrow_down"
+            src="img/language/angle-down-solid.svg"
+            width="12"
+          />
+          <p>Question 1</p>
+        </div>
+
+        <p class="questions__answer hidden">Answer hahahahahahahahaha</p>
+
+        <div class="questions__item">
+          <img
+            class="question__arrow_down"
+            src="img/language/angle-down-solid.svg"
+            width="12"
+          />
+          <p>Question 1</p>
+        </div>
+
+        <p class="questions__answer hidden">Answer hahahahahahahahaha</p>
+
+        <div class="questions__item">
+          <img
+            class="question__arrow_down"
+            src="img/language/angle-down-solid.svg"
+            width="12"
+          />
+          <p>Question 1</p>
+        </div>
+
+        <p class="questions__answer hidden">Answer hahahahahahahahaha</p>
+      </div>
+    </div>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">Donate</h2>
+      <form class="modal__form">
+        <div class="comment">
+          <label>Comment</label>
+          <textarea type="text"></textarea>
+        </div>
+        <div class="information">
+          <label>Full Name<span style="color: red">*</span></label>
+          <input class="input" type="text" />
+          <label>Email<span style="color: red">*</span></label>
+          <input class="input" type="text" />
+          <label>Phone</label>
+          <input class="input" type="phone" />
+        </div>
+
+        <button class="btn">Send &rarr;</button>
+      </form>
+    </div>
+
+    <div class="modal__contact hidden">
+      <button class="btn--close-modal--contact">&times;</button>
+      <h2 class="modal__header">Contact</h2>
+      <form class="modal__form">
+        <div class="comment">
+          <label>Comment</label>
+          <textarea id="comment" type="text"></textarea>
+        </div>
+        <div class="information">
+          <label>Full Name<span style="color: red">*</span></label>
+          <input id="name" class="input" type="text" />
+          <label>Email<span style="color: red">*</span></label>
+          <input id="email" class="input" type="text" />
+          <label>Phone</label>
+          <input id="phone" class="input" type="phone" />
+        </div>
+
+        <input
+          class="btn--contact"
+          id="send--contact"
+          value="Send &rarr;"
+          onclick="Send()"
+        />
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="modal__success hidden">
+      <img src="img/plan/success.svg" alt="" />
+      <h5>Successfully</h5>
+    </div>
+
+    <script>
+      function Send() {
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var comment = document.getElementById('comment').value;
+
+        var body =
+          'Name: ' +
+          name +
+          '<br/> Email: ' +
+          email +
+          '<br/> Phone: ' +
+          phone +
+          '<br/> Comment: ' +
+          comment;
+        console.log(body);
+        Email.send({
+          Host: 'smtp.elasticemail.com',
+          Username: 'quangnt.21it@vku.udn.vn',
+          Password: 'AC3982979309B3535A3C4F695D14B4408DE8',
+          To: 'quangnt.21it@vku.udn.vn',
+          From: 'quangnt.21it@vku.udn.vn',
+          Subject: 'Contact Email',
+          Body: body,
+        }).then(message => {});
+      }
+
+      //Switch language
+
+      // Lắng nghe sự kiện khi click vào một mục trong dropdown
+      document.querySelectorAll('.dropdown-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+          // Lấy nội dung của mục được chọn
+          var selectedText = this.textContent.trim();
+
+          // Cập nhật nút chính của dropdown với nội dung của mục được chọn
+          var dropdownButton = document.getElementById('dropdownMenu');
+          dropdownButton.textContent = selectedText;
+        });
+      });
+
+      function switchLanguageForPage(language) {
+        var jp = Array.from(document.getElementsByClassName(language));
+        var activeLanguage = Array.from(
+          document.getElementsByClassName('header-active-language')
+        );
+
+        activeLanguage.forEach(item => {
+          item.classList.remove('header-active-language');
+          item.classList.add('header-disable-language');
+        });
+
+        jp.forEach(item => {
+          item.classList.remove('header-disable-language');
+          item.classList.add('header-active-language');
+        });
+      }
+    </script>
+  </body>
+</html>
